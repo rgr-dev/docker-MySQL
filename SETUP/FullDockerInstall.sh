@@ -1,10 +1,10 @@
 #!/bin/bash     
 #
 #description     :Script for a clean Docker/Docker-Compose installation
-#company         :NemoGroup
+#company         :RGRDEVELOP
 #author          :Roger Moreno
-#date            :20190801
-#version         :0.1    
+#date            :20190803
+#version         :1.0
 
 #################################################################################
 # 

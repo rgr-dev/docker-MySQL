@@ -1,21 +1,21 @@
 
-# Base de Datos Mysql Dockerizada
+# Mysql database in a Docker container
 
-Herramienta para la creacion de un contenedor docker con una Base de Datos Mysql. El objetivo de esta herramienta es poder contar con una base de datos local lista para desplegarse en casos de contingencia.
+Tool for create a mysql DB container.
 
-# Instrucciones de uso:
-Si ya tienes Docker y docker-compose ve directo al paso **3**.
-Si quieres ejecutar la herramienta y ya tienes la Base de Datos pre-cargada ve al paso **6**.
+# Instructions:
+If you have Docker and Docker-Composer installed go to step **3**.
+If you want to execute the tool and the database was already loaded go to step **6**.
 
- 1. Instalar Docker y docker compose. Para instalar docker y docker-compose ejecuta:
+ 1. Docker and docker-compose installation. exucute:
 ```sh
         $ cd SETUP
         $ ./FullDockerInstall.sh
 ```
- 2. Si el proceso termina satisfactoriamente continua al paso 3, de lo contrario puedes visitar la pagina de documentacion de Docker y docker-compose, ó puedes llamar a un amigo.
+ 2. IF the installation process ends successfully go to step 3. If not visite the Docker and docker-compose docs.
 
- 3. Para instalacion de bases de datos nuevas o para actualizaciones primero debes copiar los archivos .sql que quieras que se ejecuten y en el orden que quieres que se ejecuten el el directorio **scripts/**. Para asegurar el orden debes anteponer un numero en cada uno de los archivos segun el orden en el que quieras que se ejecuten.
- 4. Una vez enumerados los .sql y copiados en el directorio **scripts/** se ejecuta el siguiente .sh:
+ 3. For brand new installation, first you must copy your .sql files into **/scripts** folder.For ensure execution order you must put in alphabetical order. 
+ 4. After .sql files copy into **/scripts** directory execute:
 ```sh
         $ ./cleanStart.sh
         WARNING! This will remove all local volumes not used by at least one container.
@@ -26,26 +26,25 @@ Si quieres ejecutar la herramienta y ya tienes la Base de Datos pre-cargada ve a
 	The IP of MySQL Database is : 192.168.224.2
 
 ```
- 5. Como pueden ver, luego de ejecutar el .sh se nos imprimen algunos mensajes informativos en consola, entre ellos el ip de la BD a la que debemos conectarnos. Al usar este comando, cuando inicia la Base de Datos se ejecutan los .sql que colocamos en el directorio **scripts/** y se genera la estructura de archivos necesaria para MySQL en el directorio **datadir/**.
+ 5. How can see, after execute the .sh command, the prompt print a message with the container IP. <br />
+ Use for connect with MySQL database 
 
- 6.  Si ya habias ejecutado los primeros 5 pasos anteriormente entonces solo debes ejecutar el .sh:
+ 6.  If you already executed the first 5 steps just execute this .sh:
 ```sh
         $ ./start.sh
 ```
- 7.  El **start.sh** ignora el directorio **scripts/** de manera que no se ejecuta ningun .sql al inicio de la base de datos y trabaja con el contenido existente en el directorio **datadir/**.
+ 7.  this **start.sh** ignores **scripts/** path without execute any .sql file. 
  
- 8. Para detener la Base de Datos ejecutar:
+ 8. Por Stop the container execute:
  ```sh
         $ ./stop.sh
 ```
 
 
-## Datos para la conexión y administración de la Base de Datos.
-Usuario root = **root**
-Usuario dev = **developer**
-Contraseña para ambos usuarios = **nemonemo**
+## Database connection params
+User root = **root** <br /> 
+Password = **mypassword**<br /> 
 
 ### Notas finales.
-- Asegurarse seimpre de detener los contenedores ejecutando el archivo **stop.sh**.
-- Cualquier cambio o modificacion es bienvenido siempre y cuando sea testeado primero. Recordemos que esta herramienta es para contingencia y si falla....
-- Cualquier error en mi ortografia mil disculpas.
+- Make sure to stop the **stop.sh**.
+- Sorry for my english.
