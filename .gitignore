@@ -3,3 +3,4 @@ datadir/*
 scripts/*.sql
 *.sql.gz
 *.tar.gz
+.directory

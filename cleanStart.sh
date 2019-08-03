@@ -17,7 +17,7 @@ init_clean_database(){
 	docker volume prune
 	docker builder prune
 	docker-compose -f docker-compose-SetUpDB.yml up -d
-	contIp=$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' test-mysql)
+	contIp=$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' PSCOREDEV-DB)
 	echo -e "The IP of MySQL Database is : \e[92m$contIp"
 }
 
