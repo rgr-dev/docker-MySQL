@@ -1,8 +1,8 @@
 #Instrucciones
 
-Aqui colocar los scripts en anteponiendoles un numero para el orden de ejecucion.
+Aqui colocar los scripts anteponiendoles un numero para el orden de ejecucion.
 
-Los scrips de inicializacion son ejecutados en orden alphabetico o numerico. Asegurate de que la dependencia entre scripts este protegida por esta numenclatura.
+Los scrips de inicializacion son ejecutados en orden alfabetico o numerico. Asegurate de que la dependencia entre scripts este protegida por esta numenclatura.
 
 Ejemplo:
 

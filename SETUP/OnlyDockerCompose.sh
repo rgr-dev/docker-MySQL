@@ -1,7 +1,7 @@
 #!/bin/bash     
 #
 #description     :Script for a clean Docker-Compose instalation
-#company         :Nemo Group
+#company         :NemoGroup
 #author		     :Roger Moreno
 #date            :20190801
 #version         :0.1    
