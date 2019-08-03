@@ -15,5 +15,6 @@ Ejemplo:
 ##NOTAS
 
 - El script **scripts/0-init.sql** es imprescindible. NUNCA LO BORRES
+- Asegurarse de que todos los .sql apunten a la BD que requieren. (Agregar ***USE <NOMBRE_BD>;*** al inicio de cada script).
 - No dejes en este directorios archivos pesados ya que ademas de que siempre son actualizados, embasuras el repo.
 - Ante la duda pregunta.
