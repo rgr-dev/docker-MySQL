@@ -1,6 +1,6 @@
 #!/bin/bash     
 #
-#description     :Script for a clean Docker/Docker-Compose instalation fallowed by Mysql container creation with PriceSurfer Database
+#description     :Script for a clean Docker/Docker-Compose installation
 #company         :NemoGroup
 #author          :Roger Moreno
 #date            :20190801
@@ -17,7 +17,7 @@
 set -e
 
 
-echo "\e[33m**********BEGINNING INSTALLATION**********"
+echo -e "\e[33m**********BEGINNING INSTALLATION**********"
 
 # update software repositories
 update() {
@@ -120,24 +120,12 @@ clean_docker(){
 
 }
 
-# Check previous mysql content for avoid DB generation
-check_datadir_path(){
-  if [ -d "./datadir" ]; then
-    echo "existe BD"
-    cp -f ./scripts/plugins.sql ./scripts/initscript.sql
-  else
-    echo "No existe BD"
-    mkdir datadir
-    cp -f ./scripts/plugins_DB.sql ./scripts/initscript.sql
-  fi
-}
 
-# Mysql Container init
-init_mysql_container(){
-  echo "****MySQL SetUp****"
-
-  # Init Mysql Docker
-  sudo ./start.sh
+print_finish_message(){
+  echo "****Installation complete.****"
+  echo "All Docker components installed successfully."
+  echo -e "Please \e[5m\e[33mLog out and log back\e[0m\e[0m in for use docker commands without sudo prefix."
+  echo -"After, execute start.sh file for init a Mysql Container"
 }
 
 # run
@@ -145,8 +133,6 @@ remove_docker
 install_docker
 install_docker_compose
 clean_docker
-check_datadir_path
-# init_mysql_container
+print_finish_message
 
-echo "\e[33m***********INSTALLATION FINISHED. Please Log out and log back for use Docker without sudo rights***********"
 exit 0

@@ -10,6 +10,7 @@ services:
           - ./customconf:/etc/mysql/conf.d
           - ./datadir:/var/lib/mysql
           - ./plugins:/usr/lib/mysql/plugin
+          - ./scripts:/docker-entrypoint-initdb.d/
         environment:
           MYSQL_ROOT_PASSWORD: nemonemo
           MYSQL_DATABASE: PRICESURFER_CORE_DEV
